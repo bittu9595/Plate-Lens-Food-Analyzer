@@ -7,7 +7,7 @@ app = FastAPI(title="Food Analyzer")
 # Allows the Vite dev server (a different origin) to call this API from the browser.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_origins=["http://localhost:5173", "http://localhost:5174", "https://plate-lens-food-analyzer-p4l2.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
