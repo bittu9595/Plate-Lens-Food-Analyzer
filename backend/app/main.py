@@ -12,10 +12,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(ingredients.router, prefix="/ingredients")
-app.include_router(recipes.router, prefix="/recipes")
+app.include_router(ingredients.router, prefix="/api/ingredients")
+app.include_router(recipes.router, prefix="/api/recipes")
 
 
-@app.get("/")
+@app.get("/api/")
 async def health_check() -> dict[str, str]:
     return {"status": "ok"}
