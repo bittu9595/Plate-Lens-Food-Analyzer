@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+
+.generate-recipe-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: $radius-pill;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--recipe-btn-text);
+  background: var(--recipe-btn-gradient);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--recipe-btn-gradient-hover);
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spin 0.7s linear infinite;
+  }
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

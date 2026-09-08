@@ -1,0 +1,35 @@
+.background-blobs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  &__blob {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    filter: blur(130px);
+  }
+
+  &__blob--one {
+    top: -180px;
+    left: -160px;
+    background: var(--blob-1);
+    opacity: var(--blob-1-opacity);
+  }
+
+  &__blob--two {
+    bottom: -220px;
+    left: 35%;
+    background: var(--blob-2);
+    opacity: var(--blob-2-opacity);
+  }
+
+  &__blob--three {
+    top: 25%;
+    right: -200px;
+    background: var(--blob-3);
+    opacity: var(--blob-3-opacity);
+  }
+}

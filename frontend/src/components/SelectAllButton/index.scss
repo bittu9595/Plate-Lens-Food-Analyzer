@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+
+.select-all-button {
+  padding: 16px 28px;
+  border: none;
+  border-radius: $radius-pill;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-danger);
+  background-color: var(--color-danger-soft);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-danger-soft-hover);
+  }
+}

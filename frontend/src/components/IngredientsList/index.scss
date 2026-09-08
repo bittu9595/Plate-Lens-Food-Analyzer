@@ -1,0 +1,64 @@
+@use "../../styles/variables" as *;
+
+.ingredients-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 58px;
+    padding: 10px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: $radius-md;
+    background-color: var(--color-surface-subtle);
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__checkbox {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin: 0;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  &__emoji {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__name {
+    flex-grow: 1;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: lowercase;
+    color: var(--color-text);
+
+    // Renders names in sentence case ("Salmon fillet") rather than title case.
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__category {
+    font-size: 12px;
+    white-space: nowrap;
+    color: var(--color-text-muted);
+  }
+}

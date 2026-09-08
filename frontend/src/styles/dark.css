@@ -1,0 +1,37 @@
+:root[data-theme="dark"] {
+  --color-bg: #0a0f1e;
+  --color-surface: #131a2b;
+  --color-surface-subtle: rgba(255, 255, 255, 0.025);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+
+  --color-primary: #8b7cf6;
+  --color-primary-soft: rgba(139, 124, 246, 0.16);
+
+  --color-success: #34d399;
+  --color-success-soft: rgba(52, 211, 153, 0.13);
+
+  --color-danger: #f43f5e;
+  --color-danger-soft: rgba(244, 63, 94, 0.14);
+  --color-danger-soft-hover: rgba(244, 63, 94, 0.22);
+
+  --color-hover: rgba(255, 255, 255, 0.06);
+  --color-active: rgba(255, 255, 255, 0.12);
+
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --card-border: rgba(255, 255, 255, 0.07);
+
+  --logo-bg: #0f172a;
+  --toggle-active-bg: #fdfaf3;
+  --recipe-btn-text: #1a1035;
+  --recipe-btn-gradient: linear-gradient(90deg, #b0a3f7, #c3b8fb);
+  --recipe-btn-gradient-hover: linear-gradient(90deg, #a394f5, #b8abfa);
+
+  --blob-1: #4c1d95;
+  --blob-1-opacity: 0.5;
+  --blob-2: #047857;
+  --blob-2-opacity: 0.35;
+  --blob-3: #9f1239;
+  --blob-3-opacity: 0.3;
+}

@@ -1,0 +1,37 @@
+:root[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-subtle: rgba(15, 23, 42, 0.015);
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+
+  --color-primary: #7c6ff0;
+  --color-primary-soft: rgba(124, 111, 240, 0.12);
+
+  --color-success: #16a34a;
+  --color-success-soft: rgba(22, 163, 74, 0.1);
+
+  --color-danger: #f43f5e;
+  --color-danger-soft: rgba(244, 63, 94, 0.1);
+  --color-danger-soft-hover: rgba(244, 63, 94, 0.18);
+
+  --color-hover: rgba(15, 23, 42, 0.04);
+  --color-active: rgba(15, 23, 42, 0.08);
+
+  --shadow-card: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --card-border: rgba(15, 23, 42, 0.09);
+
+  --logo-bg: #1e293b;
+  --toggle-active-bg: #1e293b;
+  --recipe-btn-text: #ffffff;
+  --recipe-btn-gradient: linear-gradient(90deg, #7c5cf5, #9b6bfa);
+  --recipe-btn-gradient-hover: linear-gradient(90deg, #6d4bf0, #8c58f8);
+
+  --blob-1: #c4b5fd;
+  --blob-1-opacity: 0.45;
+  --blob-2: #86efac;
+  --blob-2-opacity: 0.4;
+  --blob-3: #fecdd3;
+  --blob-3-opacity: 0.4;
+}

@@ -1,0 +1,132 @@
+@use "../../styles/variables" as *;
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: $radius-lg;
+  background-color: var(--color-surface-subtle);
+  animation: recipe-in 0.45s ease both;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  &__index {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: var(--color-primary-soft);
+  }
+
+  &__name {
+    flex-grow: 1;
+    font-family: $font-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+    margin: 10px 0 0;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  &__chip {
+    padding: 4px 10px;
+    border-radius: $radius-pill;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: lowercase;
+    color: var(--color-text-muted);
+    background-color: var(--color-hover);
+  }
+
+  &__toggle {
+    align-self: flex-start;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: $radius-pill;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-primary-soft);
+    cursor: pointer;
+    transition: filter 0.2s ease;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  &__steps {
+    margin: 16px 0 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: steps-in 0.3s ease;
+  }
+
+  &__step {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--color-text);
+
+    &::marker {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 16px;
+
+    &__name {
+      font-size: 17px;
+    }
+  }
+}
+
+@keyframes recipe-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes steps-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

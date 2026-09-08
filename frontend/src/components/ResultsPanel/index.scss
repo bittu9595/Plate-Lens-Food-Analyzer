@@ -1,0 +1,225 @@
+@use "../../styles/variables" as *;
+
+.results-panel {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  // Starts at a comfortable height and grows to the cap, after which the body scrolls.
+  @media (min-width: 900px) {
+    min-height: 460px;
+    max-height: 700px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-bottom: $space-lg;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 4px 0 0;
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    flex-shrink: 0;
+    padding-top: 6px;
+  }
+
+  &__count-badge {
+    min-width: 30px;
+    height: 30px;
+    padding: 0 $space-sm;
+    border-radius: $radius-pill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: var(--color-active);
+  }
+
+  &__count-label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+
+  &__tabs {
+    display: flex;
+    gap: $space-sm;
+    flex-shrink: 0;
+    margin-bottom: $space-lg;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: $radius-pill;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background-color: transparent;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+    }
+
+    &--active {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      background-color: var(--color-primary-soft);
+    }
+  }
+
+  &__tab-count {
+    padding: 1px 7px;
+    border-radius: $radius-pill;
+    font-size: 11px;
+    background-color: var(--color-active);
+  }
+
+  &__scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 6px;
+    margin-right: -6px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: $radius-pill;
+      background-color: var(--color-active);
+    }
+  }
+
+  &__recipes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__empty {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xs;
+    text-align: center;
+    padding: 48px $space-xl;
+    border: 1px dashed var(--color-border);
+    border-radius: $radius-lg;
+  }
+
+  &__empty-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  &__empty-text {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  &__error {
+    padding: 16px;
+    border-radius: $radius-lg;
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+  }
+
+  &__skeleton {
+    height: 120px;
+    border-radius: $radius-lg;
+    background: linear-gradient(
+      90deg,
+      var(--color-surface-subtle) 25%,
+      var(--color-hover) 50%,
+      var(--color-surface-subtle) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 14px;
+    flex-shrink: 0;
+    margin-top: 26px;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    flex-shrink: 0;
+    margin-top: $space-md;
+  }
+
+  &__status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-success);
+  }
+
+  &__status-text {
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 600px) {
+    padding: 22px;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+  }
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

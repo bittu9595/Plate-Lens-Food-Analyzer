@@ -1,0 +1,93 @@
+@use "../../styles/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-lg 0;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--logo-bg);
+    border: 1px solid var(--color-border);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.15;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__toggle-group {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    padding: $space-xs;
+    border-radius: $radius-pill;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  &__toggle {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-hover);
+    }
+
+    &--active,
+    &--active:hover {
+      background-color: var(--toggle-active-bg);
+    }
+  }
+
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: var(--color-active);
+    border: 1px solid var(--color-border);
+  }
+}

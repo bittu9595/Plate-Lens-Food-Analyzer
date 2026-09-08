@@ -1,0 +1,19 @@
+.home-page {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    // Cards size to their own content so a long ingredient list can't stretch the image.
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @media (min-width: 900px) {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+
+      > *:first-child {
+        min-height: 480px;
+      }
+    }
+  }
+}

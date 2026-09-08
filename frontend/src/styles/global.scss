@@ -1,0 +1,21 @@
+@use "./variables" as *;
+@import "./light.css";
+@import "./dark.css";
+
+:root {
+  font-family: $font-sans;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--card-border);
+  border-radius: $radius-xl;
+  box-shadow: var(--shadow-card);
+}

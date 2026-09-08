@@ -1,0 +1,61 @@
+.scanning-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(3px);
+  animation: overlay-in 0.4s ease;
+
+  &__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+    box-shadow: 0 0 12px 2px #a78bfa;
+    animation: scan-sweep 2.4s ease-in-out infinite;
+  }
+
+  &__label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    animation: pulse-text 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scan-sweep {
+  0% {
+    top: 2%;
+  }
+  50% {
+    top: 94%;
+  }
+  100% {
+    top: 2%;
+  }
+}
+
+@keyframes pulse-text {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
